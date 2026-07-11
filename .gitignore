@@ -130,3 +130,6 @@ dmypy.json
 .history
 logs/
 *.spec.pt
+
+config/*
+!config/default.json

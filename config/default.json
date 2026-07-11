@@ -1,0 +1,24 @@
+{
+    "dataset": {
+        "config_name": "train_config",
+        "sample_rate": 24000,
+        "character_select": 101,
+        "multi_speakers": false,
+        "multi_speaker_correspondence": "dataset/multi_speaker_correspondence.txt"
+    },
+    "normalize": {
+        "enabled": true,
+        "backup": true
+    },
+    "training": {
+        "mode": "new",
+        "config_path": "configs/train_config.json",
+        "model_save_dir": "tutorial",
+        "generator_model": "fine_model/G_v13_20231020.pth",
+        "discriminator_model": "fine_model/D_v13_20231020.pth"
+    },
+    "torch": {
+        "cudnn_benchmark": false,
+        "cudnn_deterministic": false
+    }
+}
