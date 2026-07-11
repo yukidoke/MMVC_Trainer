@@ -64,6 +64,7 @@ def main():
 
 
 def run(rank, n_gpus, hps):
+  configure_torch_runtime()
   global global_step
   
   if hps.others.os_type == "windows":
