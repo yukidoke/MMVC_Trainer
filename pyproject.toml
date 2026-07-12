@@ -10,18 +10,17 @@ dependencies = [
     "phonemizer==2.2.1",
     "scipy",
     "tensorboard==2.3.0",
-
     "torch==1.13.1+cu116",
     "torchvision==0.14.1+cu116",
     "torchaudio==0.13.1+cu116",
-
     "unidecode==1.1.1",
     "retry",
     "tqdm",
     "resampy==0.2.2",
     "psutil",
-    "protobuf==3.19.0",
+    "protobuf==3.20.3",
     "numpy==1.23.5",
+    "onnx==1.13.1",
 ]
 
 [tool.uv]

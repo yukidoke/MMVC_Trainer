@@ -413,6 +413,7 @@ dependencies = [
     { name = "librosa" },
     { name = "matplotlib" },
     { name = "numpy" },
+    { name = "onnx" },
     { name = "phonemizer" },
     { name = "protobuf" },
     { name = "psutil" },
@@ -434,8 +435,9 @@ requires-dist = [
     { name = "librosa", specifier = "==0.8.0" },
     { name = "matplotlib", specifier = "==3.3.1" },
     { name = "numpy", specifier = "==1.23.5" },
+    { name = "onnx", specifier = "==1.13.1" },
     { name = "phonemizer", specifier = "==2.2.1" },
-    { name = "protobuf", specifier = "==3.19.0" },
+    { name = "protobuf", specifier = "==3.20.3" },
     { name = "psutil" },
     { name = "pyopenjtalk" },
     { name = "resampy", specifier = "==0.2.2" },
@@ -491,6 +493,25 @@ source = { registry = "https://pypi.org/simple" }
 sdist = { url = "https://files.pythonhosted.org/packages/0b/5f/19930f824ffeb0ad4372da4812c50edbd1434f678c90c2733e1188edfc63/oauthlib-3.3.1.tar.gz", hash = "sha256:0f0f8aa759826a193cf66c12ea1af1637f87b9b4622d46e866952bb022e538c9", size = 185918, upload-time = "2025-06-19T22:48:08.269Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/be/9c/92789c596b8df838baa98fa71844d84283302f7604ed565dafe5a6b5041a/oauthlib-3.3.1-py3-none-any.whl", hash = "sha256:88119c938d2b8fb88561af5f6ee0eec8cc8d552b7bb1f712743136eb7523b7a1", size = 160065, upload-time = "2025-06-19T22:48:06.508Z" },
+]
+
+[[package]]
+name = "onnx"
+version = "1.13.1"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "numpy" },
+    { name = "protobuf" },
+    { name = "typing-extensions" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/56/b5/f5889d518276061f999d7cda5714f288b1718cbbc3f538e943822626eead/onnx-1.13.1.tar.gz", hash = "sha256:0bdcc25c2c1ce4a8750e4ffbd93ae945442e7fac6e51176f38e366b74a97dfd9", size = 10405481, upload-time = "2023-02-22T18:46:28.46Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/c7/1d/f779f3bbbc78331eb56e75b6ad42f8d0b4935f24b44e6be2ec61462b18ee/onnx-1.13.1-cp38-cp38-macosx_10_12_universal2.whl", hash = "sha256:5e2fe69e51157e7aa00e959059981ce74b5c5bd6edd4512079fc4c10fb95d28a", size = 14070436, upload-time = "2023-02-22T18:39:29.015Z" },
+    { url = "https://files.pythonhosted.org/packages/47/53/b5f9c5756b5a767bca5af69527c8883e57e5cc2b21e9433985a3bea42995/onnx-1.13.1-cp38-cp38-macosx_10_12_x86_64.whl", hash = "sha256:64fb0d5573419f26f3c1b3f6b63850569a8684d360b482c164b75701bfeaae1e", size = 12718708, upload-time = "2023-02-22T18:40:00.622Z" },
+    { url = "https://files.pythonhosted.org/packages/bb/4e/999bc85d7e744806019cf25ca3829a68edf3afad8c730ec857316540d620/onnx-1.13.1-cp38-cp38-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:15b7a41b21b61c09cf4535a69364ca69e3593f47d09d85752c0f6d07c6b337b4", size = 13805651, upload-time = "2023-02-22T18:40:31.148Z" },
+    { url = "https://files.pythonhosted.org/packages/15/51/a3cf9d237c81d26abc1c78e8355b1a777fbafcb0c35c07f086a8f4721c67/onnx-1.13.1-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:e980706de4dc94ffafc57e4ae7e7f4117dbd4c377882637c28a261a6aed38246", size = 13453592, upload-time = "2023-02-22T18:40:53.706Z" },
+    { url = "https://files.pythonhosted.org/packages/e1/0c/ba6da0a035d147a3920f074315b1a902a23bb346601be8d424db41a5695d/onnx-1.13.1-cp38-cp38-win32.whl", hash = "sha256:d03e09cb1fa9dbdaf3269cae9c8c186d422ec061ed40f393092b0dc67dd1b43c", size = 12073090, upload-time = "2023-02-22T18:41:16.281Z" },
+    { url = "https://files.pythonhosted.org/packages/d6/c8/bff3f0ce912b49fe97c98cd35a2df8bfc62fa134aa08b3d49cb5badf2c39/onnx-1.13.1-cp38-cp38-win_amd64.whl", hash = "sha256:e68ca8e43fa790c1bd772f706282788bd1187ca7d1aadf69af4bab2f4566edc0", size = 12168744, upload-time = "2023-02-22T18:41:42.032Z" },
 ]
 
 [[package]]
@@ -568,16 +589,16 @@ wheels = [
 
 [[package]]
 name = "protobuf"
-version = "3.19.0"
+version = "3.20.3"
 source = { registry = "https://pypi.org/simple" }
-sdist = { url = "https://files.pythonhosted.org/packages/c9/cb/95924cc9ced5ba0b489bb861195234a964dbd83f8c3d12d254ef4c4a5980/protobuf-3.19.0.tar.gz", hash = "sha256:6a1dc6584d24ef86f5b104bcad64fa0fe06ed36e5687f426e0445d363a041d18", size = 217553, upload-time = "2021-10-20T21:40:01.272Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/55/5b/e3d951e34f8356e5feecacd12a8e3b258a1da6d9a03ad1770f28925f29bc/protobuf-3.20.3.tar.gz", hash = "sha256:2e3427429c9cffebf259491be0af70189607f365c2f41c7c3764af6f337105f2", size = 216768, upload-time = "2022-09-29T22:39:47.592Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/ab/33/a1478c890b4711cb55cb2960bbac575b15177904455618d6e97a117a1a3a/protobuf-3.19.0-cp38-cp38-macosx_10_9_x86_64.whl", hash = "sha256:9a8a880593015ef2c83f7af797fa4fbf583b2c98b4bd94e46c5b61fee319d84b", size = 1022173, upload-time = "2021-10-20T21:29:31.555Z" },
-    { url = "https://files.pythonhosted.org/packages/74/a7/4c182238034b5751a075c52a6294c31e75a83ed8d6fb1db1219df417203a/protobuf-3.19.0-cp38-cp38-manylinux2014_aarch64.whl", hash = "sha256:6f16925f5c977dd7787973a50c242e60c22b1d1182aba6bec7bd02862579c10f", size = 913528, upload-time = "2021-10-20T21:29:33.721Z" },
-    { url = "https://files.pythonhosted.org/packages/69/ee/949eb6182636fdc4fa0e2fa02a94d79e21069d46b56d4f251d0ac39b5678/protobuf-3.19.0-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:f9097327d277b0aa4a3224e61cd6850aef3269172397715299bcffc9f90293c9", size = 1055420, upload-time = "2021-10-20T21:29:35.144Z" },
-    { url = "https://files.pythonhosted.org/packages/a9/cb/6b1ed0e3993a5337b36268b41eecd3035652ada64d4bd1df268a7f082125/protobuf-3.19.0-cp38-cp38-win32.whl", hash = "sha256:708d04394a63ee9bdc797938b6e15ed5bf24a1cb37743eb3886fd74a5a67a234", size = 775914, upload-time = "2021-10-20T21:29:37.029Z" },
-    { url = "https://files.pythonhosted.org/packages/83/6a/20169ba9573d82e4f74cdd932366e6967d0564a642b81590e24fa7e989bb/protobuf-3.19.0-cp38-cp38-win_amd64.whl", hash = "sha256:ee4d07d596357f51316b6ecf1cc1927660e9d5e418385bb1c51fd2496cd9bee7", size = 895846, upload-time = "2021-10-20T21:29:38.983Z" },
-    { url = "https://files.pythonhosted.org/packages/e6/91/7a3dd1b61de690a18a56d2447669f847305ecdee90d4742025734ccdd85e/protobuf-3.19.0-py2.py3-none-any.whl", hash = "sha256:c96e94d3e523a82caa3e5f74b35dd1c4884199358d01c950d95c341255ff48bc", size = 162635, upload-time = "2021-10-20T21:39:59.149Z" },
+    { url = "https://files.pythonhosted.org/packages/9f/1a/6848ed1669a6c70bf947d25d64ce6dcc65ccec06e917072df516944fa17e/protobuf-3.20.3-cp38-cp38-macosx_10_9_x86_64.whl", hash = "sha256:de78575669dddf6099a8a0f46a27e82a1783c557ccc38ee620ed8cc96d3be7d7", size = 982917, upload-time = "2022-09-29T22:11:12.347Z" },
+    { url = "https://files.pythonhosted.org/packages/b5/b6/ec87636b9381137f17292851461902ceac7632a00476c2afbcd864ed5447/protobuf-3.20.3-cp38-cp38-manylinux2014_aarch64.whl", hash = "sha256:f4c42102bc82a51108e449cbb32b19b180022941c727bac0cfd50170341f16ee", size = 918639, upload-time = "2022-09-29T22:11:14.326Z" },
+    { url = "https://files.pythonhosted.org/packages/da/e4/4d62585593e9f962cb02614534f62f930de6a80a0a3784282094a01919b2/protobuf-3.20.3-cp38-cp38-manylinux_2_5_x86_64.manylinux1_x86_64.whl", hash = "sha256:44246bab5dd4b7fbd3c0c80b6f16686808fab0e4aca819ade6e8d294a29c7050", size = 1019323, upload-time = "2022-09-29T22:11:16.254Z" },
+    { url = "https://files.pythonhosted.org/packages/3c/14/16ef7da61d30a519d84e6841d096fe446c4d8a2c39b083b0376b4785f1f3/protobuf-3.20.3-cp38-cp38-win32.whl", hash = "sha256:c02ce36ec760252242a33967d51c289fd0e1c0e6e5cc9397e2279177716add86", size = 780325, upload-time = "2022-09-29T22:11:17.83Z" },
+    { url = "https://files.pythonhosted.org/packages/32/f8/52f598bceb16fe365f4ef8e957ac8890aeb56abf97d365ff5abd8c1250cf/protobuf-3.20.3-cp38-cp38-win_amd64.whl", hash = "sha256:447d43819997825d4e71bf5769d869b968ce96848b6479397e29fc24c4a5dfe9", size = 904419, upload-time = "2022-09-29T22:11:19.324Z" },
+    { url = "https://files.pythonhosted.org/packages/8d/14/619e24a4c70df2901e1f4dbc50a6291eb63a759172558df326347dce1f0d/protobuf-3.20.3-py2.py3-none-any.whl", hash = "sha256:a7ca6d488aa8ff7f329d4c545b2dbad8ac31464f1d8b1c87ad1346717731e4db", size = 162128, upload-time = "2022-09-29T22:39:44.547Z" },
 ]
 
 [[package]]
